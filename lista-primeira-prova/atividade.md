@@ -86,7 +86,7 @@ public class Main {
 
 ```
 
-### 5. **Conceito de classe e objeto**
+### 5. **Classe Apartmento**
 
 ```java
 
