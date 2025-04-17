@@ -201,3 +201,9 @@ public class Apartamento {
     }
 }
 ```
+
+### 11 e 12 - **Diagrama and Clsse - Livraria **
+```
+![Captura de tela 2025-04-16 131823](https://github.com/user-attachments/assets/bb4cf062-9e0c-4354-a29a-53e42f5f422f)
+
+```
