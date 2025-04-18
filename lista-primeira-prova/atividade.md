@@ -202,8 +202,163 @@ public class Apartamento {
 }
 ```
 
-### 11 e 12 - **Diagrama and Clsse - Livraria **
+### 11 e 12 - **Diagrama and Clsse - Livraria**
+
+![image](https://github.com/user-attachments/assets/33915234-87c0-40da-a9d0-f47a70e0e2a2)
+
 ```
-![Captura de tela 2025-04-16 131823](https://github.com/user-attachments/assets/bb4cf062-9e0c-4354-a29a-53e42f5f422f)
+public class Livro {
+    private String nome;
+    private String genero;
+    private int qtdPaginas;
+
+    public Livro(String nome, String genero, int qtdPaginas) {
+        this.nome = nome;
+        this.genero = genero;
+        this.qtdPaginas = qtdPaginas;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    public int getQtdPaginas() {
+        return qtdPaginas;
+    }
+
+    public void setQtdPaginas(int qtdPaginas) {
+        this.qtdPaginas = qtdPaginas;
+    }
+
+    public  void folhear(){
+
+    }
+
+    public void abrir(){
+
+    }
+
+    public void fechar(){
+
+    }
+}
+
+public class Usuario {
+    private String nome;
+    private int matricula;
+    private  int idade;
+
+    public Usuario(String nome, int matricula, int idade) {
+        this.nome = nome;
+        this.matricula = matricula;
+        this.idade = idade;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public int getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(int matricula) {
+        this.matricula = matricula;
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+
+    public void setIdade(int idade) {
+        this.idade = idade;
+    }
+
+    public void ler(){
+
+    }
+
+    public void buscar(){
+
+    }
+}
+
+public class Emprestimo {
+    private Livro nomeLivro;
+    private Usuario nomeUsuario;
+    private int diasEmprestimo;
+
+    public Emprestimo(Livro nomeLivro, Usuario nomeUsuario, int diasEmprestimo) {
+        this.nomeLivro = nomeLivro;
+        this.nomeUsuario = nomeUsuario;
+        this.diasEmprestimo = diasEmprestimo;
+    }
+
+    public Livro getNomeLivro() {
+        return nomeLivro;
+    }
+
+    public void setNomeLivro(Livro nomeLivro) {
+        this.nomeLivro = nomeLivro;
+    }
+
+    public Usuario getNomeUsuario() {
+        return nomeUsuario;
+    }
+
+    public void setNomeUsuario(Usuario nomeUsuario) {
+        this.nomeUsuario = nomeUsuario;
+    }
+
+    public int getDiasEmprestimo() {
+        return diasEmprestimo;
+    }
+
+    public void setDiasEmprestimo(int diasEmprestimo) {
+        this.diasEmprestimo = diasEmprestimo;
+    }
+
+    public void emprestar(String livro, String usuario,int dias){
+        System.out.println("Dados do empréstimo:");
+        System.out.println("Livro: " + livro);
+        System.out.println("Usuário: " + usuario);
+        System.out.println("Dias: " + dias);
+    }
+
+    public  void devolver(){
+
+    }
+
+    public void multar(){
+
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+        Usuario u = new Usuario("Arthur",2320,20);
+        Livro l = new Livro("Codigo Limpo", "Informatica", 213);
+        Emprestimo e = new Emprestimo(l,u,14);
+
+        e.emprestar(l.getNome(),u.getNome(),14);
+    }
+}
 
 ```
