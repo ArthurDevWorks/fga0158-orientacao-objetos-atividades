@@ -86,6 +86,37 @@ public class Main {
 
 ```
 
+### 4. **Associação**
+É um tipo de relacionamente que pode ser feito entre duas ou mais classes, onde normalmente uma classe participa diretamente da outra. Exemplo: No caso das classes: professor e disciplina, na classe disciplina eu preciso associar o professor, pois a disciplina é ministrada por um professor.
+
+```
+public class Professor {
+    private String nome;
+
+    public Professor(String nome) {
+        this.nome = nome;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+}
+
+public class Disciplina {
+    private String nome;
+    private Professor professor;
+
+    public Disciplina(String nome, Professor professor) {
+        this.nome = nome;
+        this.professor = professor;
+    }
+
+    public void exibirInfo() {
+        System.out.println("Disciplina: " + nome + " | Professor: " + professor.getNome());
+    }
+}
+```
+
 ### 5. **Classe Apartmento**
 
 ```java
@@ -119,6 +150,111 @@ public class Apartamento {
     }
 }
 
+```
+
+### 6. **Herança**
+É o conceito em que uma classe serve de base para outras classes que sao denomindas classes filhas. Essas classes filhas vao herdar todos os metodos e atributos dessa classe pai, por este motivo a classe filha deve necessáriamente ser um tipo da classe pai para assim herdar caracteristicas que lhe sejam uteis.
+```
+package Ex06;
+
+public class Animal {
+    private String raca;
+    private String peso;
+    private int idade;
+
+    public Animal(String raca, String peso, int idade) {
+        this.raca = raca;
+        this.peso = peso;
+        this.idade = idade;
+    }
+
+    public String getRaca() {
+        return raca;
+    }
+
+    public void setRaca(String raca) {
+        this.raca = raca;
+    }
+
+    public String getPeso() {
+        return peso;
+    }
+
+    public void setPeso(String peso) {
+        this.peso = peso;
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+
+    public void setIdade(int idade) {
+        this.idade = idade;
+    }
+
+    public void dormir(){
+        System.out.println("Dormindo...");
+    }
+
+    public void comer(){
+        System.out.println("Comendo...");
+    }
+}
+
+package Ex06;
+
+public class Cachorro extends Animal {
+
+    public Cachorro(String raca, String peso, int idade) {
+        //Atributos herdados da classe pai
+        super(raca, peso, idade);
+    }
+
+    //Além dos metodos da classe pai o cachorro também tem o metodo de latir
+    public void latir(){
+        System.out.println("Latindo...");
+    }
+}
+
+```
+
+## 7. **Polimorfismo - Sobrecarga**
+Sobrecarga é defindio quando vários métodos têm o mesmo nome, mas parâmetros diferentes.
+
+```
+public class Calculadora {
+    public int somar(int a, int b) {
+        return a + b;
+    }
+
+    public double somar(double a, double b) {
+        return a + b;
+    }
+
+    public int somar(int a, int b, int c) {
+        return a + b + c;
+    }
+}
+
+```
+
+## 8. **Polimorfismo - Sobrescrita**
+
+Sobrescrita ocorre quando uma subclasse redefine um método da superclasse com uma nova implementação.
+
+```
+public class Veiculo {
+    public void mover() {
+        System.out.println("Veículo se movendo");
+    }
+}
+
+public class Bicicleta extends Veiculo {
+    @Override
+    public void mover() {
+        System.out.println("Bicicleta pedalando...");
+    }
+}
 ```
 
 ### 9. **Encapsulamento - Apartamento**
@@ -201,6 +337,68 @@ public class Apartamento {
     }
 }
 ```
+
+## 10. **Relacionamento de agregação**
+Agregação é uma associação porém de um modo em que uma classe faz parte de uma outra classe porém ela pode ser usada de forma independente diferente da associação, que normalmente é um conjunto de duas ou mais classes para uma funcionalidade de forma cobinada.
+
+```
+public class Departamento {
+    private String nome;
+
+    public Departamento(String nome) {
+        this.nome = nome;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+}
+
+public class Empresa {
+    private String nome;
+    private Departamento departamento;
+
+    public Empresa(String nome, Departamento departamento) {
+        this.nome = nome;
+        this.departamento = departamento;
+    }
+
+    public void exibirInfo() {
+        System.out.println("Empresa: " + nome + " | Departamento: " + departamento.getNome());
+    }
+}
+```
+
+Exemplo prático:
+
+java
+Copiar
+Editar
+public class Departamento {
+    private String nome;
+
+    public Departamento(String nome) {
+        this.nome = nome;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+}
+
+public class Empresa {
+    private String nome;
+    private Departamento departamento;
+
+    public Empresa(String nome, Departamento departamento) {
+        this.nome = nome;
+        this.departamento = departamento;
+    }
+
+    public void exibirInfo() {
+        System.out.println("Empresa: " + nome + " | Departamento: " + departamento.getNome());
+    }
+}
 
 ### 11 e 12 - **Diagrama and Clsse - Livraria**
 
