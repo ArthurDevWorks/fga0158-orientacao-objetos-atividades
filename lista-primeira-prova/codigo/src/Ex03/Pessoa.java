@@ -1,3 +1,5 @@
+package Ex03;
+
 public class Pessoa {
     private String nome;
     private int idade;
@@ -35,7 +37,7 @@ public class Pessoa {
 
     @Override
     public String toString() {
-        return "Pessoa{" +
+        return "Ex03.Pessoa{" +
                 "nome='" + this.nome + '\'' +
                 ", idade=" + this.idade +
                 ", peso=" + this.peso +
